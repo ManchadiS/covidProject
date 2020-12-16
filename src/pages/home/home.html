@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <div>
+      <ion-thumbnail item-end>
+        <img src="assets/imgs/logo.png" class="custom-header-logo">
+      </ion-thumbnail>
+    </div>
+
+    <!-- <ion-title>Home</ion-title> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Hello User</h3>
+
+  <p>
+    Welcome to COVID-19 app.
+  </p>
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button> -->
+</ion-content>
+
+<ion-footer>
+  <div padding>
+    <button ion-button block (click)="gotoAssessment()">Go For Self Assessment</button>
+  </div>
+</ion-footer>

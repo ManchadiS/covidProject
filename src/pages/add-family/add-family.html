@@ -1,0 +1,49 @@
+<!--
+  Generated template for the AddFamilyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Family</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <h2>You : Nand Lal</h2>
+      <p>UID: UID565IO6</p>
+    </ion-item>
+    <div *ngFor="let info of familyInfo">
+      <ion-item>
+        <ion-icon name="contact" item-start large></ion-icon>
+        <h2>{{info.name}}</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start large></ion-icon>
+        <ion-label>Relation</ion-label>
+        <ion-select [(ngModel)]="gaming">
+          <ion-option value="nes">NES</ion-option>
+          <ion-option value="n64">Nintendo64</ion-option>
+          <ion-option value="ps">PlayStation</ion-option>
+          <ion-option value="genesis">Sega Genesis</ion-option>
+          <ion-option value="saturn">Sega Saturn</ion-option>
+          <ion-option value="snes">SNES</ion-option>
+        </ion-select>
+      </ion-item>
+     
+    </div>
+  </ion-list>
+  <button ion-button clear color="light">+ Add more family member</button>
+</ion-content>
+
+<ion-footer>
+  <div padding>
+    <button ion-button block (click)="gotoInfo()">Create family</button>
+  </div>
+</ion-footer>

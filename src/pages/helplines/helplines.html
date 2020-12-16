@@ -1,0 +1,36 @@
+<!--
+  Generated template for the HelplinesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-title>Helpline</ion-title>
+  <button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Select State</ion-label>
+    <ion-select [(ngModel)]="selectedState" (ngModelChange)="getHelplineByState(selectedState)">
+      <ion-option value="all">All</ion-option>
+      <ion-option *ngFor="let s of states" value={{s.name}}>{{s.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-item text-wrap *ngFor="let item of helplineData">
+      <h2 style="font-weight: bold;">{{item.State}}</h2>
+      <h3 *ngIf="item.Number">
+        <ion-icon name="call"></ion-icon> &nbsp;
+        {{item.Number}}
+        <span *ngIf="item.Other_number">
+          , {{item.Other_number}}
+        </span>
+      </h3>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>

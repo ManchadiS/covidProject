@@ -1,0 +1,92 @@
+<!--
+  Generated template for the ReportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>report</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Report Of</h3>
+  <button ion-button round color="light">Nand Lal</button>
+  <button ion-button round color="light">Pooja Devi</button>
+  <button ion-button round color="light">Karan Kumar</button>
+  <button ion-button round color="light">Vijay Kumar</button>
+
+
+  <ion-card style="background-color: #FE3555;">
+    <ion-card-header style="color: #ffffff">
+      90% chances of COVID-19
+    </ion-card-header>
+    <ion-card-content style="color: #ffffff">
+      Your case resembels with 90% probability of COVID-19,we suggest you to have a Laboratory
+      test and keep social distancing from today.
+    </ion-card-content>
+  </ion-card>
+  <canvas #lineCanvas></canvas>
+  <ion-list no-lines>
+    <ion-list-header>
+      Daily report details
+    </ion-list-header>
+    <div *ngFor="let item of reports">
+      <ion-item>
+        Day {{item.day}} report
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Dry Cough</ion-label>
+            <ion-checkbox color="primary" checked="true"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>High fever</ion-label>
+            <ion-checkbox color="primary" checked="true"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label>Sore throat</ion-label>
+            <ion-checkbox color="primary" checked="true"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Breath issue</ion-label>
+            <ion-checkbox color="primary" checked="true" disabled="true"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </ion-list>
+  <ion-card style="background-color: #CFF3F3;">
+    <ion-card-header style="color: #159691">
+      Together we can fight Corona virus
+    </ion-card-header>
+    <ion-card-content>
+      For further info contact Ministry of Health, Govt of India's 24*7
+      <ion-row style="font-size: 11px;">
+        <ion-col>
+          Contact: +91-11-2397-8046
+        </ion-col>
+        <ion-col>
+          Email: ncov2019@gmail.com
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <div padding>
+    <button ion-button block (click)="gotoLab()">See the nearest laboratory</button>
+  </div>
+</ion-footer>

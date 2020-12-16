@@ -1,0 +1,50 @@
+<ion-menu [content]="content" type="overlay">
+  <ion-header>
+    <ion-toolbar color="primary" style="height: 85px;background-color: #1C9CF5;">
+      <ion-title>
+        <ion-icon name="ios-contact-outline"></ion-icon>
+        Nishant Dogra
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name={{p.icon}} class="custom-sidemenu-icon"></ion-icon>
+        &nbsp; <span style="color: #727272;"></span>{{p.title}}
+      </button>
+    </ion-list>
+
+
+    <ion-card style="background-color: #CFF3F3;">
+      <ion-card-header style="color: #159691;font-weight: bold;">
+        <ion-icon name="share"></ion-icon>
+        &nbsp; Worried about your dear ones ?
+      </ion-card-header>
+      <ion-card-content>
+        Share & invite your friends,family & dear one to the
+        application and stay updated with the latest updates on
+        COVID-19.
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+
+
+
+  <ion-footer>
+    <ion-list style="margin: 0px; border-top: 0.55px solid #c8c7cc;">
+
+      <ion-item (click)="logout()">
+        <ion-icon name="log-out" item-start></ion-icon>
+        <h3>Logout from device</h3>
+        <small>Sehatmand | version : {{appVersionNo}}</small>
+      </ion-item>
+
+    </ion-list>
+  </ion-footer>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

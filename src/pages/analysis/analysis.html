@@ -1,0 +1,75 @@
+<!--
+  Generated template for the AnalysisPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Counts & Stats</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<!-- This is stats page for country India -->
+<ion-content padding>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/logo.png">
+      </ion-avatar>
+      <h2>Covid-19 India</h2>
+      <p>As on : 04 April 2020, 09:00 GMT+5:30
+      </p>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Desired Graph</ion-label>
+      <ion-select [(ngModel)]="graphs" (ngModelChange)="graphToggled()">
+        <ion-option value="line">Line</ion-option>
+        <ion-option value="bar">Bar</ion-option>
+        <ion-option value="pie">Pie</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+
+    <canvas class="custom-canvas" #lineCanvas></canvas>
+    <!-- <canvas #lineCanvas *ngIf="isBar"></canvas> -->
+
+    <!-- <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='thumbs-up'></ion-icon>
+          12 Likes
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='text'></ion-icon>
+          4 Comments
+        </button>
+      </ion-col>
+      <ion-col align-self-center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row> -->
+
+  </ion-list>
+
+
+
+
+
+  <ion-row class="fixed-bottom">
+    <ion-col>
+      <button ion-button block (click)="addtractor()">Record day 1 analysis</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
